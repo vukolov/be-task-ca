@@ -4,6 +4,8 @@ This project is a very naive implementation of a simple shop system. It mimics i
 
 ## Goals
 
+Please answer the following questions:
+
 1. Why can we not easily split this project into two microservices?
 2. Why does this project not adhere to the clean architecture even though we have seperate modules for api, repositories, usecases and the model?
 3. What would be your plan to refactor the project to stick to the clean architecture?

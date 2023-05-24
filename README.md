@@ -16,7 +16,12 @@ Please answer the following questions:
 Stretch goals:
 * Fork the repository and start refactoring
 * Write meaningful tests
-* Replace the SQL repository with an in-memory implementation 
+* Replace the SQL repository with an in-memory implementation
+
+## References
+* [Clean Architecture by Uncle Bob](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
+* [Clean Architecture in Python](https://www.youtube.com/watch?v=C7MRkqP5NRI)
+* [A detailed summary of the Clean Architecture book by Uncle Bob](https://github.com/serodriguez68/clean-architecture)
 
 ## How to use this project
 
@@ -35,12 +40,6 @@ If you have not installed poetry you find instructions [here](https://python-poe
 * `poetry run lint` - runs flake8 with a few plugins
 * `poetry run format` - uses isort and black for autoformating
 * `poetry run typing` - uses mypy to typecheck the project
-
-
-
-
-
-
 
 ## Specification - A simple shop
 

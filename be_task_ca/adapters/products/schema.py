@@ -16,3 +16,12 @@ class CreateItemResponse(CreateItemRequest):
 
 class AllItemsRepsonse(BaseModel):
     items: List[CreateItemResponse]
+
+class GetItemRequest(BaseModel):
+    id: UUID
+
+class GetItemResponse(GetItemRequest):
+    name: str
+    description: str | None = None
+    price: float
+    quantity: int

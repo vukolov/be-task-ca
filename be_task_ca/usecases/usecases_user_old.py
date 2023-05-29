@@ -6,7 +6,7 @@ from ..item.model import Item
 
 from ..item.repository import find_item_by_id
 
-from .model import CartItem, User
+from be_task_ca.adapters.users.model import CartItem, User
 
 from .repository import (
     find_cart_items_for_user_id,

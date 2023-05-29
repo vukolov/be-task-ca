@@ -1,0 +1,4 @@
+1. Why can we not easily split this project into two microservices?
+First of all this project works with tight related entities like Customers and Products. If we split this projects into two microservices we would have a lot of duplicated code.
+2. Why does this project not adhere to the clean architecture even though we have separate modules for api, repositories, usecases and the model?
+Despite the spliting on a separate models the project still has no separation in abstract layers. For example, the usecases layer has a direct dependency on the repositories layer. This is a violation of the clean architecture.

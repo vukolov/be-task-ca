@@ -8,7 +8,7 @@ from typing import List
 
 class ProductUseCases:
     def product_exists(self, product: ProductEntity, storage: Storage) -> bool:
-        return storage.find_product_by_name(product.name) is not None
+        return storage.get_one('name', product.name) is not None
 
     def create(self, product_entity: ProductEntity, storage: Storage) -> str:
         if not self.product_exists(product_entity, storage):
@@ -20,4 +20,4 @@ class ProductUseCases:
         return storage.get_all()
 
     def get_info(self, product_id: UUID, storage: Storage) -> ProductEntity:
-        return storage.find_product_by_id(product_id)
+        return storage.get_one('id', product_id)

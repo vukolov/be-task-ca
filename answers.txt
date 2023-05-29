@@ -1,4 +1,16 @@
 1. Why can we not easily split this project into two microservices?
 First of all this project works with tight related entities like Customers and Products. If we split this projects into two microservices we would have a lot of duplicated code.
+In case if one microservice will continue use WEB API and the second one will use, for example, console we also can't split is easily because WEB API calls appears in the usecases layer.
+
 2. Why does this project not adhere to the clean architecture even though we have separate modules for api, repositories, usecases and the model?
-Despite the spliting on a separate models the project still has no separation in abstract layers. For example, the usecases layer has a direct dependency on the repositories layer. This is a violation of the clean architecture.
+Despite the splitting on separate models the project still has no separation in abstract layers. For example, the usecases layer raise HTTP exception. This is a violation of the clean architecture because use cases should not know about the HTTP protocol.
+
+3. What would be your plan to refactor the project to stick to the clean architecture?
+According to clean architecture approach I would create 4 abstract layers.
+First layers for Products and Users entities. It contains only business logic.
+Second layer - use cases. This layer should work with entities from the first layer and storage interface.
+Third layer - controllers and adapters. This layer transforms data and work as an intermediate layer between use cases and api/databases/frameworks layer.
+Fourth layer - api/databases/frameworks layer. This layer contains all the code that is related to the HTTP protocol, databases connections and instructions and any particular realisation of communication with outer tools.
+
+4. How can you make dependencies between modules more explicit?
+We can use interfaces and dependency injection. It helps to separate code in different modules and make relations more obvious.

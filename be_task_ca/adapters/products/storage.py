@@ -1,7 +1,6 @@
 from ..abstractstorage import AbstractStorage
 from be_task_ca.entities.products.product import Product as ProductEntity
 from .model import Item as ProductStorageRepresentation
-from uuid import UUID
 from typing import List
 
 
@@ -17,21 +16,11 @@ class Storage(AbstractStorage):
         self.db.commit()
         return record
 
-    def find_product_by_name(self, name: str) -> ProductEntity or None:
-        record = self.db.query(ProductStorageRepresentation).filter(ProductStorageRepresentation.name == name).first()
-        if record is None:
-            return None
-        else:
-            return ProductEntity(
-                name=record.name,
-                price=record.price,
-                description=record.description,
-                quantity=record.quantity,
-                id=record.id,
-            )
+    def update(self, product_entity: ProductEntity) -> ProductStorageRepresentation:
+        ...
 
-    def find_product_by_id(self, id: UUID) -> ProductEntity or None:
-        record = self.db.query(ProductStorageRepresentation).filter(ProductStorageRepresentation.id == id).first()
+    def get_one(self, field_name: str, field_value) -> ProductEntity or None:
+        record = self.db.query(ProductStorageRepresentation).filter(getattr(ProductStorageRepresentation, field_name) == field_value).first()
         if record is None:
             return None
         else:

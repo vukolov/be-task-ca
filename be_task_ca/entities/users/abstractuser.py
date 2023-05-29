@@ -1,8 +1,9 @@
 import uuid
 import hashlib
+from ..abstractentity import AbstractEntity
 
 
-class AbstractUser:
+class AbstractUser(AbstractEntity):
     def __init__(self, email: str, id: uuid.UUID = None, raw_password: str = None, hashed_password: str = None):
         self.id = id if id else uuid.uuid4()
         self.email = email

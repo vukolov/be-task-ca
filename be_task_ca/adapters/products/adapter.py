@@ -1,6 +1,6 @@
 from be_task_ca.entities.products.product import Product as ProductEntity
-from be_task_ca.adapters.products.model import Item as ProductModel
-from be_task_ca.adapters.products.schema import CreateItemRequest, CreateItemResponse, GetItemRequest, GetItemResponse
+from .model import Item as ProductModel
+from .schema import CreateItemRequest, CreateItemResponse, GetItemRequest, GetItemResponse
 
 
 class Adapter:

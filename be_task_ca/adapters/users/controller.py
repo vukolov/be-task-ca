@@ -1,4 +1,4 @@
-from be_task_ca.adapters.users.schema import AddToCartRequest, AddToCartResponse, CreateUserRequest, CreateUserResponse
+from .schema import AddToCartRequest, AddToCartResponse, CreateUserRequest, CreateUserResponse
 from be_task_ca.usecases.customerusecases import CustomerUseCases
 from adapter import Adapter
 from be_task_ca.adapters.products.storage import Storage as ProductStorage

@@ -1,9 +1,9 @@
 from sqlalchemy.orm import Session
-from abc import ABC, abstractmethod
+from abc import ABCMeta, abstractmethod
 from be_task_ca.entities.abstractentity import AbstractEntity
 
 
-class AbstractStorage:
+class AbstractStorage(metaclass=ABCMeta):
     def __init__(self, db: Session):
         self.db = db
 

@@ -1,5 +1,5 @@
 from be_task_ca.entities.users.customer import Customer as CustomerEntity
-from be_task_ca.adapters.users.schema import AddToCartRequest, AddToCartResponse, CreateUserRequest, CreateUserResponse
+from .schema import AddToCartRequest, AddToCartResponse, CreateUserRequest, CreateUserResponse
 
 
 class Adapter:

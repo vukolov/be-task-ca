@@ -1,5 +1,5 @@
-from be_task_ca.adapters.products.schema import CreateItemRequest, CreateItemResponse, AllItemsRepsonse, GetItemRequest, GetItemResponse
-from be_task_ca.adapters.products.storage import Storage as ProductStorage
+from .schema import CreateItemRequest, CreateItemResponse, AllItemsRepsonse, GetItemRequest, GetItemResponse
+from .storage import Storage as ProductStorage
 from be_task_ca.usecases.productusecases import ProductUseCases
 from be_task_ca.usecases.statuses import Statuses
 from adapter import Adapter
